@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">Student AI</div>
+  <div id="userbox" hidden><span id="useremail"></span><button class="ghost" id="logout">Chiqish</button></div>
+</header>
+
+<main id="auth" class="auth" hidden>
+  <form id="authform" class="card">
+    <h1>Hisobingizga kiring</h1>
+    <label>Email<input type="email" id="email" required autocomplete="email"></label>
+    <label>Parol<input type="password" id="password" minlength="6" required autocomplete="current-password"></label>
+    <button class="primary" id="signin" type="submit">Kirish</button>
+    <button class="ghost" id="signup" type="button">Ro'yxatdan o'tish</button>
+    <p class="msg" id="authmsg" role="alert"></p>
+  </form>
+</main>
+
+<main id="app" class="app" hidden>
+  <nav id="tabs" class="tabs" aria-label="Vositalar"></nav>
+  <section class="card">
+    <h2 id="toolname"></h2>
+    <p id="tooldesc" class="muted"></p>
+    <form id="toolform"></form>
+    <div class="filebox">
+      <label class="ghost filelabel">Fayldan matn olish (PDF, DOCX, PPTX, TXT, rasm)
+        <input type="file" id="file" accept=".pdf,.docx,.pptx,.txt,.md,image/*" hidden>
+      </label>
+      <span id="filestatus" class="muted"></span>
+    </div>
+    <button class="primary" id="run">Yaratish</button>
+    <p class="msg" id="status" role="status"></p>
+  </section>
+  <section class="card" id="resultcard" hidden>
+    <div class="actions" id="actions"></div>
+    <div id="result" class="result"></div>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mammoth@1.6.0/mammoth.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5.0.5/dist/tesseract.min.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
